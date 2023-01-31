@@ -1,0 +1,104 @@
+{
+  "name": "mdc_self",
+  "title": "刮削插件",
+  "author": "Sks",
+  "description": "刮削插件，对配置的路径下的XX视频进行刮削",
+  "version": "0.1",
+  "requirements": [],
+  "configField": [
+    {
+      "fieldName": "uid",
+      "fieldType": "Enum",
+      "label": "推送用户",
+      "helperText": "选择接收推送的用户,用户管理要独立设置推送配置才生效",
+      "enumValuesRef": "UserList",
+      "multiValue": true
+    },
+    {
+      "fieldName": "main_mode",
+      "fieldType": "Enum",
+      "label": "整理模式",
+      "helperText": "普通模式;整理模式：仅根据女优把电影命名为番号并分类到女优名称的文件夹下;更新模式：更新现有NFO和图片",
+      "enumValues": {
+        "普通模式": "1",
+        "整理模式": "2",
+        "更新模式": "3"
+      },
+      "defaultValue": "1",
+      "multiValue": false
+    },
+    {
+      "fieldName": "link_mode",
+      "fieldType": "Enum",
+      "label": "软/硬链接",
+      "helperText": "方便PT下载完既想刮削又想继续上传的仓鼠党同志\n\n",
+      "enumValues": {
+        "移动文件": "0",
+        "建立软链接": "1",
+        "先尝试建立硬链接，无法建立硬链接（跨盘符，跨卷，网络路径等情况）再建立软链接": "2"
+      },
+      "defaultValue": "2",
+      "multiValue": false
+    },
+    {
+      "fieldName": "source_folder",
+      "fieldType": "String",
+      "label": "源目录",
+      "helperText": "需要整理的目录",
+      "defaultValue": ""
+    },
+    {
+      "fieldName": "failed_output_folder",
+      "fieldType": "String",
+      "label": "失败目录",
+      "helperText": "整理失败转移的目录",
+      "defaultValue": ""
+    },
+    {
+      "fieldName": "success_output_folder",
+      "fieldType": "String",
+      "label": "成功目录",
+      "helperText": "整理成功转移的目录",
+      "defaultValue": ""
+    },
+    {
+      "fieldName": "exclude_folders",
+      "fieldType": "String",
+      "label": "排除目录",
+      "helperText": "例如folders=failed,output，多目录刮削时跳过failed,output",
+      "defaultValue": ""
+    },
+    {
+      "fieldName": "switch",
+      "fieldType": "Enum",
+      "label": "代理开关",
+      "helperText": "是否打开代理",
+      "enumValues": {
+        "开": "1",
+        "关": "0"
+      },
+      "defaultValue": "1",
+      "multiValue": false
+    },
+    {
+      "fieldName": "proxy_type",
+      "fieldType": "Enum",
+      "label": "代理类型",
+      "helperText": " http或socks5",
+      "enumValues": {
+        "http": "http",
+        "socks5": "socks5"
+      },
+      "defaultValue": "http",
+      "multiValue": false
+    },
+    {
+      "fieldName": "proxy",
+      "fieldType": "String",
+      "label": "代理地址",
+      "helperText": "例如：127.0.0.1:1081",
+      "defaultValue": ""
+    }
+  ],
+  "logoUrl": "/plugins/site_signin/site.png"
+}
