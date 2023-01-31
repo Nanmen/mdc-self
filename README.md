@@ -1,4 +1,4 @@
-# mr_mdc
+# mdc-self
 mdc_self mr的mdc插件接入
 
 # 申明
