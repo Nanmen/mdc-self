@@ -26,7 +26,6 @@ import_list = [
     'OpenCC',
     'deepl-translate',
     'ping3',
-    'cloudscraper',
     'urllib3',
     'certifi',
     'MechanicalSoup',
@@ -52,6 +51,8 @@ for v in import_list:
     except ImportError:
         print("Not find " + v + " now install")
         GetPackage(v)
+
+
 #############################################################
 from .Movie_Data_Capture import start
 
@@ -103,12 +104,12 @@ def on_event(ctx: PluginContext, event_type: str, data: Dict):
     library_path = data['library_path']
     global source_folder
     if source_folder == library_path:
-        start()
+        async_mdc_main()
 
 
 @plugin.task('art_daily_check_task', '日常艺术刮削任务', cron_expression='0 5 * * *')
 def task():
-    start()
+    async_mdc_main()
 
 
 def async_call(fn):
