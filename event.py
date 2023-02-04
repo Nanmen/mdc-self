@@ -101,9 +101,10 @@ def on_event(ctx: PluginContext, event_type: str, data: Dict):
     """
     _LOGGER.info(f'新的事件：{event_type} 事件数据：{data}')
     # 下载完成时存储的地址
-    library_path = data['library_path']
+    source_path = data['source_path']
     global source_folder
-    if source_folder == library_path:
+    if source_folder in source_path:
+        _LOGGER.info("已经开始异步进行刮削")
         async_mdc_main()
 
 
